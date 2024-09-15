@@ -4,3 +4,49 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+:root.theme-light {
+    --themes-background: #fff;
+    --themes-accent: #000;
+    --min-font-weight: 400;
+    --max-font-weight: 700;
+    --themes-background-image:
+    repeating-linear-gradient(270deg, #d3d3d3 0 2px, transparent 2px 4px), 
+    repeating-linear-gradient(#d3d3d3 0 2px, transparent 2px 4px),
+    linear-gradient(#e7e7e7, #1a1a1a);
+    --color-accent: #000;
+    --color-text-button: #fff;
+    --name: #000;
+    --color-sparks: #f00;
+}  
+
+:root.theme-dark {
+    --themes-background: #000;
+    --themes-accent: #fff;
+    --min-font-weight: 465;
+    --max-font-weight: 785;
+    --themes-background-image:
+        repeating-linear-gradient(270deg, #000 0 2px, transparent 2px 4px), 
+        repeating-linear-gradient(#000 0 2px, transparent 2px 4px),
+        linear-gradient(#007f0c, #004306);
+    --color-accent: #00CC14;
+    --color-text-button: #00CC14;
+    --name: #00CC14;
+    --color-sparks: #f00;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --themes-background: #000;
+        --themes-accent: #fff;
+        --min-font-weight: 465;
+        --max-font-weight: 785;
+        --themes-background-image:
+            repeating-linear-gradient(270deg, #000 0 2px, transparent 2px 4px), 
+            repeating-linear-gradient(#000 0 2px, transparent 2px 4px),
+            linear-gradient(#007f0c, #004306);
+        --color-accent: #00CC14;
+        --color-text-button: #00CC14;
+        --name: #00CC14;
+        --color-sparks: #f00;
+    }
+}
