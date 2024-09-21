@@ -12,3 +12,225 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+.theme-menu__button:disabled::before {
+    content: "▶";
+    opacity: 0.6;
+    display: inline-block;
+    animation-name: arrow-movement;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    position: absolute;
+    left: 5px;
+}
+
+.theme-menu__button:disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.theme-menu__button:enabled {
+    transition: opacity 0.3s ease;
+}
+
+.theme-menu__button:hover {
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.theme-menu__button:focus {
+    outline: none;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.theme-menu__button::after {
+    content: "";
+    inline-size: calc(100% - 35px);
+    block-size: 2px;
+    background-color: var(--color-accent);
+    inset-block-end: -2px;
+    inset-inline-start: 27px;
+    position: absolute;
+    z-index: 1;
+    scale: 0;
+    transition: scale 0.3s;
+    transform-origin: left;
+}
+
+.theme-menu__button:focus-visible::after {
+    content: "";
+    inline-size: calc(100% - 35px);
+    block-size: 2px;
+    background-color: var(--color-accent);
+    inset-block-end: -2px;
+    inset-inline-start: 27px;
+    position: absolute;
+    z-index: 1;
+    scale: 1;
+    transition: scale 0.3s;
+    transform-origin: left;
+}
+
+.card__icon-button:focus {
+    outline: none;
+}
+    
+.card__icon-button:focus-visible {
+    border: 2px solid var(--color-accent);
+    transition: border 0.3s ease;
+}
+
+.button-style:focus {
+    outline: none;
+    box-shadow: 2px 2px 0 var(--color-accent);
+    transition: box-shadow 0.3s;
+}
+
+.button-style::before {
+    content: "";
+    inline-size: 100%;
+    block-size: 100%;
+    background-color: var(--color-accent);
+    position: absolute;
+    inset: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+    transform-origin: left;
+}
+
+.button-style:hover::before {
+    content: "";
+    inline-size: 100%;
+    block-size: 100%;
+    background-color: var(--color-accent);
+    position: absolute;
+    inset: 0;
+    transform: scaleX(1);
+    transition: transform 0.5s ease-in-out;
+    transform-origin: left;
+    z-index: 0;
+}
+
+.like-icon:hover .core {
+    fill: var(--name);
+    transition: fill 0.3s linear;
+}
+
+.core {
+    fill: transparent;
+    transition: fill 0.3s linear 0.03s;
+}
+
+.like-icon:hover .main-body {
+    fill: var(--name);
+    transition: fill 0.3s linear 0.05s;
+}
+
+.main-body {
+    fill: transparent;
+    transition: fill 0.3s linear;
+}
+
+
+
+.like-icon:active .core {
+    fill: #f00;
+    transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+    fill: #f00;
+    transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked .core {
+    fill: #f00;
+    transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+    fill: #f00;
+    transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked .contour {
+    fill: #f00;
+    transition: fill 0.3s 0.06s linear;
+}
+
+.like-icon.is-liked .heart {
+    animation-name: heart-scale;
+    animation-duration: 0.3s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
+    animation-delay: 0.1s;
+}
+
+.like-icon.is-liked .sparks {
+    animation-name: animation-sparks;
+    animation-duration: 0.3s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
+    animation-delay: 0.3s;
+}
+
+.like-icon.is-liked.is-liked .contour {
+    fill: var(--name);
+    transition: fill 0.1s  linear;
+}
+
+.label__picture1 {
+    background-image: linear-gradient(
+        to left,
+        #16dc31 20%,
+        #f80000 50%,
+        #ff0 90%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: text-picture1 3s ease-in-out infinite alternate;
+}
+
+@keyframes text-picture1 {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+}
+
+@keyframes arrow-movement {
+    from {
+      translate: 0;
+    }
+    to {
+      translate: 4px;
+    }
+}
+
+@keyframes heart-scale {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.5);
+      transform-origin: center;
+    }
+}
+
+@keyframes animation-sparks {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+
