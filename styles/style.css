@@ -33,7 +33,7 @@
   align-items: center;
   max-inline-size: 700px;
   border: 2px solid var(--color-accent);
-  margin: 100px auto;
+  margin: 100px auto 101px;
   background-color: var(--themes-background);
   padding-block: clamp(7.5rem, 6.3462rem + 4.9231vw, 8.5rem) 23px;
   font-family: var(--accent-font), sans-serif;
@@ -42,14 +42,15 @@
 
 .logo {
   font-size: clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem);
-  padding-block-end: 15px;
+  padding-block-end: 20px;
+  line-height: 1em;
 }
 
 .heading {
   font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
   text-transform: uppercase;
-  line-height: 31px;
-  padding-block-end: 0.95em;
+  line-height: 1em;
+  padding-block-end: 25px;
 }
 
 .theme-menu__item + .theme-menu__item {
@@ -62,6 +63,7 @@
   background-color: transparent;
   font-size: 14px;
   text-transform: uppercase;
+  line-height: 1em;
   position: relative;
   padding-left: 26px;
 }
@@ -83,7 +85,7 @@
 .card_title {
   font-variation-settings: 'wght' var(--max-font-weight);
   font-size: 18px;
-  line-height: 1.2em;
+  line-height: 21px;
   padding-block: 5px 5px;
   padding-inline: 10px;
 }
@@ -132,18 +134,18 @@
   padding-inline: 25px;
   padding-block-start: 25px;
   font-size: 18px;
-  line-height: 1.16em;
+  line-height: 21px;
 }
 
 .content_text:not(:first-child) {
-  padding-block-start: 28px;
+  padding-block-start: 27px;
 }
 
 .buttons {
   display: flex;
   justify-content: end;
   align-items: center;
-  margin-block-start: 24px;
+  margin-block-start: 25px;
   margin-block-end: 25px;
 }
 
@@ -158,6 +160,7 @@
 .like-icon {
   inline-size: 39px;
   padding-inline-end: 3px;
+  padding-block-end: 2px;
 }
 
 .card__like-button {
@@ -199,7 +202,7 @@
 }
 
 .dialog {
-  inline-size: clamp(21.3125rem + 4px, 20.4471rem + 3.6923vw, 22.0625rem);
+  inline-size: clamp(21.3125rem, 20.4471rem + 3.6923vw, 22.0625rem);
   padding-block: 30px;
   padding-inline: 30px;
   position: fixed;
@@ -227,19 +230,17 @@
     top: 22px;
   }
 
-  .card {
-    margin-block-end: 51px;
-  }
-
   .button-floppy {
     flex-direction: column;
-    block-size: 80px;
+    block-size: 84px;
     padding-inline: 5px;
     margin-block-end: 102px;
+    padding-block-end: 15px;
+    padding-block-start: 12px;
   }
 
   .floppy-box {
-    inline-size: 39px;
+    inline-size: 28px;
     padding-block-start: 3px;
   }
 
